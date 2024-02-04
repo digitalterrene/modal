@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, ReactNode } from "react";
+import React, { useEffect, useRef, ReactNode } from "react";
 
 interface ModalProps {
   children: ReactNode;
@@ -7,7 +7,12 @@ interface ModalProps {
   onClose: () => void; // Callback to close the modal
 }
 
-const Modal: React.FC<ModalProps> = ({ children, styles, isOpen, onClose }) => {
+export const Modal: React.FC<ModalProps> = ({
+  children,
+  styles,
+  isOpen,
+  onClose,
+}) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,5 +48,3 @@ const Modal: React.FC<ModalProps> = ({ children, styles, isOpen, onClose }) => {
     </>
   );
 };
-
-export default Modal;
