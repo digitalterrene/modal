@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+
+# Build files
+dist/
+*.js
+*.d.ts
+
+# IDE and editor files
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+*.user
+*.suo
+*.cache
+*.log
+*.vspscc
+*.vssscc
+.vs2019/
+*.sublime-workspace
+*.sublime-project
+*.log
+*.tlog/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# JetBrains IDEs
+.idea/
+
+# Package files
+*.npm-debug.log
+*.lock

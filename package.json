@@ -1,0 +1,39 @@
+{
+  "name": "modal",
+  "version": "1.0.0",
+  "description": "A customizable React modal component with support for outside click detection. Easily integrate a modal into your React application with this simple and flexible package.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "jest"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalterrene/modal.git"
+  },
+  "keywords": [
+    "Modal",
+    "Vertueal",
+    "Modal"
+  ],
+  "author": "digitalterrene",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digitalterrene/modal/issues"
+  },
+  "homepage": "https://github.com/digitalterrene/modal#readme",
+  "dependencies": {
+    "@types/react": "^18.2.52"
+  }
+}
