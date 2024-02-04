@@ -1,5 +1,5 @@
 {
-  "name": "modal",
+  "name": "@vcl/modal",
   "version": "1.0.0",
   "description": "A customizable React modal component with support for outside click detection. Easily integrate a modal into your React application with this simple and flexible package.",
   "main": "dist/index.js",
