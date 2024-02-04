@@ -1,13 +1,13 @@
-// src/Modal.tsx
 import React, { useState, useEffect, useRef, ReactNode } from "react";
 
 interface ModalProps {
   children: ReactNode;
   styles?: React.CSSProperties;
+  isOpen: boolean; // Accept isOpen as a prop to control modal visibility
+  onClose: () => void; // Callback to close the modal
 }
 
-export const Modal: React.FC<ModalProps> = ({ children, styles }) => {
-  const [open, setOpen] = useState(false);
+const Modal: React.FC<ModalProps> = ({ children, styles, isOpen, onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export const Modal: React.FC<ModalProps> = ({ children, styles }) => {
         modalRef.current &&
         !modalRef.current.contains(event.target as Node)
       ) {
-        setOpen(false);
+        onClose(); // Close the modal when clicking outside
       }
     };
 
@@ -25,17 +25,17 @@ export const Modal: React.FC<ModalProps> = ({ children, styles }) => {
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, []);
+  }, [onClose]); // Include onClose in the dependency array to avoid stale closure
 
   const modalStyles: React.CSSProperties = {
-    display: open ? "block" : "none",
+    display: isOpen ? "block" : "none",
     // Add any additional styles you want to apply
     ...styles,
   };
 
   return (
     <>
-      {open && (
+      {isOpen && (
         <div ref={modalRef} style={modalStyles}>
           {children}
         </div>
@@ -43,3 +43,5 @@ export const Modal: React.FC<ModalProps> = ({ children, styles }) => {
     </>
   );
 };
+
+export default Modal;
